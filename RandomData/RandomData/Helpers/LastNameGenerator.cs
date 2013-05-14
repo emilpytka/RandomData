@@ -5,15 +5,13 @@ namespace RandomData.Helpers
     internal class LastNameGenerator
     {
         private static LastNameGenerator _instance;
-        public static LastNameGenerator Instance
-        {
+        public static LastNameGenerator Instance {
             get { return _instance ?? (_instance = new LastNameGenerator()); }
         }
 
         private readonly string[] _lastNames;
 
-        public int Count
-        {
+        public int Count {
             get { return 8607; }
         }
 

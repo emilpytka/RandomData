@@ -8,7 +8,7 @@ namespace RandomData.Attributes
         public object GenerateValue()
         {
             var lnGenerator = LastNameGenerator.Instance;
-            var randomNum = RandomGenerator.Instance.NextRandom(lnGenerator.Count);
+            var randomNum = RandomNumberGenerator.Instance.NextRandom(lnGenerator.Count);
             return lnGenerator.GetLastName(randomNum);
         }
     }

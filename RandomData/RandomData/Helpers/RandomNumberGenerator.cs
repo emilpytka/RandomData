@@ -2,18 +2,18 @@
 
 namespace RandomData.Helpers
 {
-    public class RandomGenerator
+    public class RandomNumberGenerator
     {
-        private static RandomGenerator _instance;
+        private static RandomNumberGenerator _instance;
 
-        public static RandomGenerator Instance
+        public static RandomNumberGenerator Instance
         {
-            get { return _instance ?? (_instance = new RandomGenerator()); }
+            get { return _instance ?? (_instance = new RandomNumberGenerator()); }
         }
 
         private readonly Random _randomizator;
 
-        private RandomGenerator()
+        private RandomNumberGenerator()
         {
             _randomizator = new Random();
         }

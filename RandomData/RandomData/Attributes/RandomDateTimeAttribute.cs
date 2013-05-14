@@ -13,13 +13,13 @@ namespace RandomData.Attributes
             if (_startTime != null && _endTime != null)
             {
                 var range = (int)(_endTime.Value - _startTime.Value).TotalDays;
-                return _startTime.Value.AddDays(RandomGenerator.Instance.NextRandom(range));
+                return _startTime.Value.AddDays(RandomNumberGenerator.Instance.NextRandom(range));
             }
             else
             {
                 var start = new DateTime(1995, 1, 1);
                 var range = (int) (DateTime.Today - start).TotalDays;
-                return start.AddDays(RandomGenerator.Instance.NextRandom(range));
+                return start.AddDays(RandomNumberGenerator.Instance.NextRandom(range));
             }
         }
 

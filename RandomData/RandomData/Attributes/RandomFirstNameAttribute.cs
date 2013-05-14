@@ -5,7 +5,7 @@ namespace RandomData.Attributes
 {
     public class RandomFirstNameAttribute : Attribute, IRandomGenerator
     {
-        private FirstNameType? _nameType;
+        private readonly FirstNameType? _nameType;
         public RandomFirstNameAttribute() {
         }
 
@@ -14,24 +14,25 @@ namespace RandomData.Attributes
         }
 
         public object GenerateValue() {
+            //todo this is ugly
             if (_nameType == null) {
-                var manOrWomen = RandomGenerator.Instance.NextRandom(2);
+                var manOrWomen = RandomNumberGenerator.Instance.NextRandom(2);
                 if (manOrWomen % 2 == 1) {
                     var mng = MaleNameGenerator.Instance;
-                    var randomNumber = RandomGenerator.Instance.NextRandom(mng.Count);
+                    var randomNumber = RandomNumberGenerator.Instance.NextRandom(mng.Count);
                     return mng.GetName(randomNumber);
                 } else {
                     var mng = FemaleNameGenerator.Instance;
-                    var randomNumber = RandomGenerator.Instance.NextRandom(mng.Count);
+                    var randomNumber = RandomNumberGenerator.Instance.NextRandom(mng.Count);
                     return mng.GetName(randomNumber);
                 }
             } else if (_nameType == FirstNameType.MALE) {
                 var mng = MaleNameGenerator.Instance;
-                var randomNumber = RandomGenerator.Instance.NextRandom(mng.Count);
+                var randomNumber = RandomNumberGenerator.Instance.NextRandom(mng.Count);
                 return mng.GetName(randomNumber);
             } else if (_nameType == FirstNameType.FEMALE) {
                 var mng = FemaleNameGenerator.Instance;
-                var randomNumber = RandomGenerator.Instance.NextRandom(mng.Count);
+                var randomNumber = RandomNumberGenerator.Instance.NextRandom(mng.Count);
                 return mng.GetName(randomNumber);
             }
             return "Ala";

@@ -7,7 +7,7 @@ namespace RandomData.Attributes
     {
         public object GenerateValue()
         {
-            var a = RandomGenerator.Instance.NextRandom(2);
+            var a = RandomNumberGenerator.Instance.NextRandom(2);
             return (a%2 == 1);
         }
     }

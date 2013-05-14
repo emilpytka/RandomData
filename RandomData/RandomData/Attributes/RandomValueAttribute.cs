@@ -13,7 +13,7 @@ namespace RandomData.Attributes
 
         public object GenerateValue()
         {
-            var index = RandomGenerator.Instance.NextRandom(_values.Length);
+            var index = RandomNumberGenerator.Instance.NextRandom(_values.Length);
             return _values[index];
         }
     }
